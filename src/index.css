@@ -1,0 +1,110 @@
+/* Reset + Genel */
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Roboto', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+:root {
+  --bg: #f5f6fa;
+  --text: #333;
+  --primary: #1F3A93;
+  --accent: #FFB400;
+  --card-bg: #fff;
+}
+.dark-mode {
+  --bg: #121212;
+  --text: #eee;
+  --primary: #4B6CB7;
+  --accent: #FFB400;
+  --card-bg: #1e1e1e;
+}
+
+/* Layout */
+.app {
+  display: flex;
+  height: 100vh;
+}
+.sidebar {
+  width: 220px;
+  background: var(--primary);
+  color: #fff;
+}
+.main {
+  flex:1;
+  display:flex; flex-direction:column;
+}
+.content {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Header */
+.header {
+  height: 60px;
+  background: var(--card-bg);
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 0 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+/* Sidebar Nav */
+.sidebar nav a {
+  display:block; padding:15px 20px; color:#fff; text-decoration:none;
+  transition: background 0.2s;
+}
+.sidebar nav a.active, .sidebar nav a:hover {
+  background: rgba(0,0,0,0.2);
+}
+
+/* Buttons */
+button {
+  font-family: inherit;
+  border:none; cursor:pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+button.primary {
+  background: var(--primary); color:#fff; padding:8px 16px; border-radius:6px;
+}
+button.primary:hover { background:#16357b; transform: scale(1.02); }
+button.accent {
+  background: var(--accent); color:#333; padding:8px 16px; border-radius:6px;
+}
+button.accent:hover { background:#e0a600; }
+
+/* Cards */
+.card {
+  background: var(--card-bg);
+  border-radius:8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding:16px;
+  margin-bottom:16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+/* Forms & Modal */
+.modal-backdrop {
+  position:fixed; top:0; left:0; right:0; bottom:0;
+  background:rgba(0,0,0,0.5); display:flex; align-items:center; justify-content:center;
+}
+.modal {
+  background: var(--card-bg);
+  padding:24px;
+  border-radius:8px;
+  width: 400px;
+}
+.modal input, .modal select {
+  width:100%; margin-bottom:12px;
+  padding:8px; border:1px solid #ccc; border-radius:4px;
+}
+
+/* Utility */
+.flex { display:flex; }
+.space-between { justify-content:space-between; }
+.mt-16 { margin-top:16px; }
+.mb-16 { margin-bottom:16px; }
